@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"
+        android:text="FORMULIR PENDAFTARAN"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/et_nama_lengkap"
+        android:hint="Nama Lengkap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/et_no_pendaftaran"
+        android:hint="Nomor Pendaftaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@id/et_nama_lengkap"/>
+
+    <Spinner
+        android:id="@+id/sel_jalur_pendaftaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_no_pendaftaran"
+        android:layout_margin="10dp"/>
+
+    <CheckBox
+        android:id="@+id/cbox_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sel_jalur_pendaftaran"
+        android:layout_margin="10dp"
+        android:text="Konfirmasi Pendaftaran"
+        android:textSize="17dp"/>
+
+    <Button
+        android:id="@+id/btn_daftar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cbox_confirm"
+        android:layout_margin="15dp"
+        android:text="Daftar"
+        android:textSize="17dp" />
+
+</RelativeLayout>
