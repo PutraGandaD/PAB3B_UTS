@@ -63,23 +63,21 @@ public class MainActivity extends AppCompatActivity {
                 // Condition for StartActivity and error set.
                 // All condition/logic/code that i used here based on my own knowledge and research without asking to anyone.
                 // by Putra Ganda Dewata, November 3rd 2022.
-                if (nama.trim().equals("") && nomorPd.trim().equals("")) {
-                    Toast.makeText(MainActivity.this, "Harap Lengkapi data anda terlebih dahulu sebelum melanjutkan.", Toast.LENGTH_SHORT).show();
-                } else if (nama.trim().equals("") && nomorPd.trim().equals("") && cboxConfirm.isChecked()) {
-                    Toast.makeText(MainActivity.this, "Harap Lengkapi data anda terlebih dahulu sebelum melanjutkan.", Toast.LENGTH_SHORT).show();
+                if (nama.trim().equals("") && nomorPd.trim().equals("") && selectedJalurPD.trim().equalsIgnoreCase("pilih jalur pendaftaran...")) {
+                    Toast.makeText(MainActivity.this, "Harap lengkapi data anda sebelum melanjutkan!", Toast.LENGTH_SHORT).show();
                 } else if (nama.trim().equals("")) {
-                    etNamaLengkap.setError("Nama Tidak Boleh Kosong");
+                    etNamaLengkap.setError("Field nama wajib diisi!");
                 } else if (nomorPd.trim().equals("")) {
-                    etNoPendaftaran.setError("Nomor Pendaftaran Tidak Boleh Kosong");
-                } else if (nama.trim().equals("") && cboxConfirm.isChecked()) {
-                    etNamaLengkap.setError("Nama Tidak Boleh Kosong");
-                } else if (nomorPd.trim().equals("") && cboxConfirm.isChecked()) {
-                    etNamaLengkap.setError("Nomor Pendaftaran Tidak Boleh Kosong");
-                } else if (cboxConfirm.isChecked()) {
-                    btnDaftar.setEnabled(true);
-                    startActivity(firstActivity);
+                    etNoPendaftaran.setError("Field Nomor Pendaftaran wajib diisi!");
+                } else if (selectedJalurPD.trim().equalsIgnoreCase("pilih jalur pendaftaran...")) {
+                    Toast.makeText(MainActivity.this, "Harap pilih Jalur Pendaftaran sebelum lanjut!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Harap centang kotak Konfirmasi Pendaftaran sebelum melanjutkan", Toast.LENGTH_SHORT).show();
+                    // cbox state
+                    if (cboxConfirm.isChecked()) {
+                        startActivity(firstActivity);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Harap centang Konfirmasi Pendaftaran sebelum melanjutkan!", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
                 // Debug

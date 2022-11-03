@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PABUTS22</string>
     <string-array name="arr_jalur_pendaftaran">
+        <item>Pilih Jalur Pendaftaran...</item>
         <item>Tes Tertulis</item>
         <item>Jalur Tanpa Tes</item>
         <item>Ujian Saringan Masuk</item>
